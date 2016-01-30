@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RedditClone</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= "Hello, " + current_user.name if current_user %>
+  <% flash.each do |key, value| %>
+    <%= value %>
+  <% end %>
+  <% if current_user %>
+    <%= button_to "Logout", sessions_url(current_user.id), method: :delete %>
+  <% end %>
+
+<%= yield %>
+
+</body>
+</html>

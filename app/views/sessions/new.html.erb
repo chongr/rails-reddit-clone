@@ -1,0 +1,12 @@
+<h2> Login! </h2>
+
+<form action= '<%= sessions_url %>' method='post' >
+  <label name='users[name]'>Username: </label>
+  <input type='text' name='users[name]'>
+  <br>
+
+  <label name='users[password]'>Password: </label>
+  <input type='password' name='users[password]'>
+
+  <%= button_to "Submit" %>
+</form>

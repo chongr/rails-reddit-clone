@@ -1,0 +1,9 @@
+<h2> <%= @sub.title %> </h2>
+<br>
+<%= @sub.moderator.name %>
+<br>
+<%= @sub.description %>
+<br>
+<% if current_user.id == @sub.moderator_id %>
+  <%= button_to "Edit Sub", edit_sub_url(@sub), method: :get %>
+<% end %>

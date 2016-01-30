@@ -1,0 +1,14 @@
+<form action= '<%= current_sub.persisted? ? sub_url(current_sub) : subs_url %>' method='post' >
+  <% if current_sub.persisted? %>
+    <input type='hidden' name='_method' value='patch'>
+  <% end %>
+  <label name='subs[title]'>Title: </label>
+  <input type='text' name='subs[title]' value='<%= current_sub.title %>'>
+  <br>
+
+  <label name='subs[description]'>Description: </label>
+  <input type='text' name='subs[description]' value='<%= current_sub.description  %>'>
+
+  <input type='hidden' name='subs[moderator_id]' value= '<%=current_user.id %>'>
+  <%= button_to "Submit" %>
+</form>

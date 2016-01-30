@@ -1,0 +1,5 @@
+<h2> <%= @user.name %> </h2>
+<%= button_to "Logout", sessions_url(@user.id), method: :delete %>
+<br>
+<br>
+<%= button_to "Create new Sub", new_sub_url, method: :get %>
