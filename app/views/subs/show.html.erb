@@ -7,3 +7,4 @@
 <% if current_user.id == @sub.moderator_id %>
   <%= button_to "Edit Sub", edit_sub_url(@sub), method: :get %>
 <% end %>
+<%= button_to "New Comment", new_sub_post_url(@sub), method: :get %>
